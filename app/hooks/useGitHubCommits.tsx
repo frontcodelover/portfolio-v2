@@ -40,7 +40,8 @@ export const useGitHubCommits = () => {
         setCommits(response.data.items); // On récupère les commits dans 'items'
         setTotalCount(response.data.total_count); // On stocke le total_count
         setLoading(false);
-      } catch (err) {
+			} catch (err) {
+				console.error(err);
         setError('Failed to fetch commits');
         setLoading(false);
       }

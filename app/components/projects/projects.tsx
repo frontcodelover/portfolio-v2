@@ -6,6 +6,8 @@ import { useGitHubCommits } from '@/app/hooks/useGitHubCommits'; // Utilise le h
 export const Projects = () => {
   const { commits, loading, error,totalCount } = useGitHubCommits();
 
+	console.log(commits, loading, error, totalCount);
+
   return (
     <>
       <div id='projects' />
