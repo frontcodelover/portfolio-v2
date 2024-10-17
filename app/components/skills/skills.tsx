@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Skills = () => {
   return (
-    <div className='flex flex-wrap flex-col md:flex-row gap-5 mb-16 md:mb-52 mt-20 tracking-tighter'>
+    <div className='flex flex-wrap flex-col md:flex-row gap-5 mb-16 md:mb-40 mt-20 tracking-tighter'>
       <Box
         size={'min-h-[350px] lg:min-h-[500px] flex flex-col gap-7 p-[30px] lg:p-[50px] w-full md:w-[calc(33.33%-10px)]'}
         colors={'bg-red-500'}

@@ -16,7 +16,7 @@ export const Headings = () => {
             </span>
           </h1>
           <div className='lg:w-2/3 tracking-tighter'>
-            <h2 className='md:text-2xl text-xl font-normal text-slate-700 dark:text-slate-300'>
+            <h2 className='md:text-2xl text-xl font-normal dark:text-slate-300'>
               ___French Front-End Developer crafting modern web experiences with <span className='font-bold'>React & Next.js</span> ready to grow within a{' '}
               <span className='underline'>supportive team.</span>
             </h2>
