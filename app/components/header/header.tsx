@@ -1,7 +1,6 @@
 'use client';
 import { CgDarkMode } from 'react-icons/cg';
 import Link from 'next/link';
-import React, { useState } from 'react';
 import Button from './theme/button';
 
 //import le context pour change la couleur du theme
@@ -11,7 +10,7 @@ export const Header = () => {
   const { themeColor, setThemeColor } = useThemeColor();
 
   const links = [
-    { name: 'About', href: '/about' },
+    { name: 'Skills', href: '/#skills' },
     { name: 'Projects', href: '/projects' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -21,10 +20,10 @@ export const Header = () => {
   };
 
   return (
-    <header className='flex justify-between items-center p-8'>
+    <header className='flex h-full items-center justify-between'>
       <Link href='/'>
-        <h1 className='text-4xl font-black hover:-scale-x-100 duration-300'>
-          <span className='translate-x-1 inline-block'>N</span>d<span className='-translate-x-1 inline-block'>R</span>
+        <h1 className='flex text-3xl font-black gap-1'>
+          <span className='translate-x-1'>N</span>d<span className='-translate-x-1 inline-block'>R</span>
         </h1>
       </Link>
       <nav>

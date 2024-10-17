@@ -11,6 +11,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+	plugins: [],
+	corePlugins: {
+    scrollBehavior: true,
+  },
 };
 export default config;
