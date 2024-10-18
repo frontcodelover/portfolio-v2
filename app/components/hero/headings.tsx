@@ -39,7 +39,7 @@ export const Headings = () => {
         className='flex justify-center'
       >
         <Link href='/#skills'>
-          <CgArrowDown className='mx-auto -mt-32 text-3xl animate-bounce' />
+          <CgArrowDown className='mx-auto -mt-44 text-3xl animate-bounce' />
         </Link>
       </motion.div>
     </>

@@ -88,7 +88,7 @@ export const Projects = () => {
           </motion.div>
         </div>
 
-        <div className='text-3xl md:ml-[66%] md:w-3/6 w-4/6 py-20 tracking-tighter'>
+        <div className='text-2xl md:text-3xl md:ml-[66%] md:w-3/6 w-4/6 py-20 tracking-tighter'>
           Just few projects after <span className='font-black'>{totalCount} commits</span>
         </div>
       </div>

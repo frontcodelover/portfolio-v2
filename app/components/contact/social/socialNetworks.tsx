@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export const SocialNetworks = () => {
   return (
-    <div className='flex gap-4 items-center justify-center'>
+    <div className='flex gap-4 items-center justify-center flex-wrap'>
       <Link href='https://www.linkedin.com/in/nicolas-de-raemy/' target='_blank'>
         <div className='flex gap-2 items-center dark:text-slate-950 hover:text-slate-600 dark:hover:text-slate-600  bg-white px-6 py-1 rounded-2xl text-xl text-slate-900 tracking-tighter dark:border-none border'>
           <FaLinkedin />

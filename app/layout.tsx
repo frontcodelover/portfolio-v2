@@ -25,10 +25,7 @@ export default function RootLayout({
     <html lang='en'>
       <ThemeColorProvider>
         <body className={`${notoSans.variable} antialiased`}>
-          <SpotlightWrapper>
-            <Header />
-            {children}
-          </SpotlightWrapper>
+          <SpotlightWrapper>{children}</SpotlightWrapper>
         </body>
       </ThemeColorProvider>
     </html>

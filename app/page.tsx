@@ -5,11 +5,13 @@ import { Projects } from './components/projects/projects';
 import { About } from './components/skills/about';
 import { Skills } from './components/skills/skills';
 import { Title } from './components/title/title';
+import { Header } from '@/app/components/header/header';
 
 export default function Home() {
   return (
-    <div className='flex justify-between items-center'>
+    <div className='justify-between items-center'>
       <div className='flex-1'>
+        <Header />
         <Headings />
         <Title heading={'This is who I am and what I love to do...'} id={'skills'} />
         <Skills />

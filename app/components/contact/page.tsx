@@ -5,7 +5,7 @@ import { SocialNetworks } from '@/app/components/contact/social/socialNetworks';
 const Contact = () => {
   return (
     <div className='flex items-center justify-center'>
-      <div className='xl:w-4/12 flex flex-col gap-14'>
+      <div className='flex flex-col gap-14 sm:w-8/12 w-screen px-8'>
         <ContactForm />
         <SocialNetworks />
       </div>
