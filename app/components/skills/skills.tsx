@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Box from './box';
 
 export const Skills = () => {
-  // Animation configuration
   const boxVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.9 },
     visible: (i: number) => ({
@@ -12,7 +11,7 @@ export const Skills = () => {
       y: 0,
       scale: 1,
       transition: {
-        delay: i * 0.3, // Delay between each set of boxes
+        delay: i * 0.3, 
         duration: 0.6,
         ease: 'easeInOut',
       },
@@ -21,13 +20,12 @@ export const Skills = () => {
 
   return (
     <div className='flex flex-wrap flex-col md:flex-row gap-5 mb-16 md:mb-40 mt-20 tracking-tighter'>
-      {/* Première ligne de 2 Box */}
       <motion.div
         initial='hidden'
         whileInView='visible'
-        viewport={{ once: true, amount: 0.2 }} // Start animation when 20% of the element is visible
+        viewport={{ once: true, amount: 0.2 }} 
         variants={boxVariants}
-        custom={0} // Indice pour ajuster le délai
+        custom={0} 
         className='flex flex-wrap gap-5 w-full'
       >
         <Box
@@ -44,7 +42,6 @@ export const Skills = () => {
         />
       </motion.div>
 
-      {/* Deuxième ligne de 2 Box */}
       <motion.div
         initial='hidden'
         whileInView='visible'
@@ -67,13 +64,12 @@ export const Skills = () => {
         />
       </motion.div>
 
-      {/* Troisième ligne de 2 Box */}
       <motion.div
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true, amount: 0.2 }}
         variants={boxVariants}
-        custom={2} // Troisième indice pour délai
+        custom={2}
         className='flex flex-wrap gap-5 w-full'
       >
         <Box

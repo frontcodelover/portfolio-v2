@@ -10,7 +10,7 @@ export const Headings = () => {
       <motion.div className='flex h-screen max-h-screen lg:items-center'>
         <div className='grid lg:grid-cols-2 md:pl-9'>
           <motion.h2
-            initial={{ opacity: 0 }} // Pas de déplacement ici non plus
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className='flex flex-col text-center text-6xl lg:text-7xl justify-center lg:text-right lg:flex-1 lg:min-w-6/12 font-black tracking-tighter lg:-mt-36 lg:items-end py-6 px-10 lg:p-10 text-slate-900 dark:text-slate-200'
           >
@@ -20,9 +20,9 @@ export const Headings = () => {
             </span>
           </motion.h2>
           <motion.div
-            initial={{ opacity: 0 }} // Idem, on ne bouge pas sur l'axe Y
+            initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }} // Toujours le délai pour le H2
+            transition={{ delay: 0.5 }} 
             className='lg:w-2/3 tracking-tighter'
           >
             <h1 className='md:text-2xl text-xl font-normal dark:text-slate-300'>
@@ -33,7 +33,7 @@ export const Headings = () => {
         </div>
       </motion.div>
       <motion.div
-        initial={{ y: -20, opacity: 0 }} // Ici on laisse le déplacement pour l'icône
+        initial={{ y: -20, opacity: 0 }} 
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: 'easeInOut', duration: 0.75 }}
         className='flex justify-center'

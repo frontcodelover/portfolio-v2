@@ -3,16 +3,16 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 
 export type ThemeColor = 'light' | 'dark';
 
-// Créer un contexte avec un type qui inclut la couleur du thème et une fonction pour le changer
+// Create a context type for the theme color
 interface ThemeColorContextType {
   themeColor: ThemeColor;
   setThemeColor: (color: ThemeColor) => void;
 }
 
-// Initialiser le contexte avec `undefined` pour forcer l'utilisation via le Provider
+// Initi the context with an empty object
 const ThemeColorContext = createContext<ThemeColorContextType | undefined>(undefined);
 
-// Créer un hook personnalisé pour utiliser le contexte du thème
+// Create a custom hook to use the theme color context
 export const useThemeColor = () => {
   const context = useContext(ThemeColorContext);
   if (!context) {
@@ -21,24 +21,23 @@ export const useThemeColor = () => {
   return context;
 };
 
-// Créer un Provider pour envelopper l'application avec le contexte du thème
+// Create a provider component to wrap the app with the theme color context
 export const ThemeColorProvider = ({ children }: { children: ReactNode }) => {
-  // Définir l'état initial basé sur le localStorage ou un thème par défaut
+  // Define the state for the theme color
   const [themeColor, setThemeColor] = useState<ThemeColor>(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('themeColor') as ThemeColor;
-      return savedTheme || 'light'; // Utilise 'light' si rien n'est trouvé
+      return savedTheme || 'light'; 
     }
-    return 'light'; // Valeur par défaut lors du rendu côté serveur
+    return 'light'; 
   });
 
-  // Utiliser useEffect pour synchroniser le thème avec localStorage
+  // Apply the theme color to the root element
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Sauvegarder la couleur du thème dans le localStorage à chaque changement
       localStorage.setItem('themeColor', themeColor);
 
-      // Ajouter la classe `dark` ou `light` à l'élément root (html)
+      // Apply the theme color to the root element
       const root = document.documentElement;
       if (themeColor === 'dark') {
         root.classList.add('dark');

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Octokit } from '@octokit/rest';
 
-// Typage des commits récupérés
 export type Commit = {
   sha: string;
   commit: {
@@ -20,7 +19,7 @@ export type Commit = {
 
 export const useGitHubCommits = () => {
   const [commits, setCommits] = useState<Commit[]>([]);
-  const [totalCount, setTotalCount] = useState<number>(0); // Ajout de totalCount pour stocker la valeur de total_count
+  const [totalCount, setTotalCount] = useState<number>(0); 
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -37,8 +36,8 @@ export const useGitHubCommits = () => {
             accept: 'application/vnd.github.cloak-preview+json',
           },
         });
-        setCommits(response.data.items); // On récupère les commits dans 'items'
-        setTotalCount(response.data.total_count); // On stocke le total_count
+        setCommits(response.data.items); 
+        setTotalCount(response.data.total_count); 
         setLoading(false);
       } catch (err) {
         console.error(err);
@@ -50,5 +49,5 @@ export const useGitHubCommits = () => {
     fetchCommits();
   }, []);
 
-  return { commits, totalCount, loading, error }; // On retourne totalCount également
+  return { commits, totalCount, loading, error }; 
 };

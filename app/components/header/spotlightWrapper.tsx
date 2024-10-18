@@ -31,7 +31,7 @@ export const SpotlightWrapper: React.FC<SpotlightWrapperProps> = ({ children }) 
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className='relative overflow-hidden border-slate-800 bg-gradient-to-t from-slate-100 to-slate-50 dark:from-slate-950 dark:to-slate-900 p-8 shadow-xl'
+      className='relative overflow-hidden border-slate-800 bg-gradient-to-t from-slate-100 to-slate-50 dark:from-slate-950 dark:to-slate-900 shadow-xl p-8'
     >
       <div
         className='pointer-events-none absolute inset-0 transition-opacity duration-300'

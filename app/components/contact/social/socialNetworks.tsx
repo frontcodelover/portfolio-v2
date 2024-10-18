@@ -1,24 +1,26 @@
 import Link from 'next/link';
 import React from 'react';
+import { FaXTwitter } from 'react-icons/fa6';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export const SocialNetworks = () => {
   return (
     <div className='flex gap-4 items-center justify-center'>
-      <Link href='https://www.linkedin.com/in/nicolas-rabault-6b7b7b1b6/' target='_blank'>
-        <div className='text-3xl text-slate-200 dark:text-slate-300 hover:text-slate-400 dark:hover:text-slate-400'>
-          <i className='fab fa-linkedin'></i>
+      <Link href='https://www.linkedin.com/in/nicolas-de-raemy/' target='_blank'>
+        <div className='flex gap-2 items-center dark:text-slate-950 hover:text-slate-600 dark:hover:text-slate-600  bg-white px-6 py-1 rounded-2xl text-xl text-slate-900 tracking-tighter dark:border-none border'>
+          <FaLinkedin />
           <span>LinkedIn</span>
         </div>
       </Link>
-      <Link href='' target='_blank'>
-        <div className='text-3xl text-slate-200 dark:text-slate-300 hover:text-slate-400 dark:hover:text-slate-400'>
-          <i className='fab fa-github'></i>
+      <Link href='https://github.com/frontcodelover' target='_blank'>
+        <div className='flex gap-2 items-center dark:text-slate-950 hover:text-slate-600 dark:hover:text-slate-600  bg-white px-6 py-1 rounded-2xl text-xl text-slate-900 tracking-tighter dark:border-none border'>
+          <FaGithub />
           <span>GitHub</span>
         </div>
       </Link>
-      <Link href='https://twitter.com/nicolasrabault' target='_blank'>
-        <div className='text-3xl text-slate-200 dark:text-slate-300 hover:text-slate-400 dark:hover:text-slate-400'>
-          <i className='fab fa-twitter'></i>
+      <Link href='https://x.com/frontcodelover' target='_blank'>
+        <div className='flex gap-2 items-center dark:text-slate-950 hover:text-slate-600 dark:hover:text-slate-600  bg-white px-6 py-1 rounded-2xl text-xl text-slate-900 tracking-tighter dark:border-none border'>
+          <FaXTwitter />
           <span>Twitter</span>
         </div>
       </Link>

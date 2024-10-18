@@ -11,7 +11,7 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className='flex flex-col gap-6'>
+      <div className='flex flex-col gap-6 mt-20'>
         <label htmlFor='email' className='dark:text-white text-3xl tracking-tighter'>
           Email Address
         </label>
@@ -24,7 +24,7 @@ const ContactForm = () => {
         <textarea id='message' name='message' className=' text-slate-900 rounded-2xl p-3 h-40  dark:border-none border' />
         <ValidationError prefix='Message' field='message' errors={state.errors} />
 
-        <button type='submit' disabled={state.submitting} className='bg-white px-4 py-1 rounded-2xl text-3xl text-slate-900 font-black tracking-tighter  dark:border-none border'>
+        <button type='submit' disabled={state.submitting} className='bg-white px-4 py-1 rounded-2xl text-3xl text-slate-900 hover:text-slate-800 font-black tracking-tighter  dark:border-none border'>
           Submit
         </button>
       </div>

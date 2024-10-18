@@ -3,14 +3,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export const About = () => {
-  // Configuration de l'animation
   const aboutVariants = {
-    hidden: { opacity: 0, x: -50 }, // Commence avec une opacité 0 et légèrement à gauche
+    hidden: { opacity: 0, x: -50 }, 
     visible: {
       opacity: 1,
-      x: 0, // Retourne à sa position initiale
+      x: 0, 
       transition: {
-        duration: 0.8, // Durée de l'animation
+        duration: 0.8, 
         ease: 'easeInOut',
       },
     },
@@ -20,7 +19,7 @@ export const About = () => {
     <motion.div
       initial='hidden'
       whileInView='visible'
-      viewport={{ once: true, amount: 0.5 }} // L'animation commence lorsque 20% de l'élément est visible
+      viewport={{ once: true, amount: 0.5 }}
       variants={aboutVariants}
       className='flex flex-col text-2xl tracking-tighter lg:mb-40'
     >

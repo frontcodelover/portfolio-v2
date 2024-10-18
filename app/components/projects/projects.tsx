@@ -3,8 +3,8 @@ import React from 'react';
 import { Box } from './box/box';
 import { useGitHubCommits } from '@/app/hooks/useGitHubCommits';
 import { motion } from 'framer-motion';
+import { FaGithub } from 'react-icons/fa';
 
-// Définir les stacks en dehors du composant pour éviter la répétition
 const stacks = {
   nextjs: {
     name: 'NextJS',
@@ -45,28 +45,13 @@ const betweenDevs = [stacks.react, stacks.nodejs, stacks.websocket, stacks.tailw
 const favoriteBooks = [stacks.nextjs, stacks.firebase, stacks.tailwind];
 
 export const Projects = () => {
-  const { commits, loading, error, totalCount } = useGitHubCommits();
-
-  console.log(commits, loading, error, totalCount);
+  const { totalCount } = useGitHubCommits();
 
   return (
     <>
       <div id='projects'>
         <div className='grid lg:grid-cols-3 gap-7 w-full mt-20'>
-          {/* Première Box avec whileInView */}
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }} viewport={{ once: true, amount: 0.2 }}>
-            <Box
-              style={'min-h-[350px] lg:min-h-[500px] flex flex-col gap-7 p-[30px] lg:p-[50px] w-full'}
-              colors={'bg-slate-300 text-slate-900'}
-              headings={'Photographer MarketPlace'}
-              text={'A market place for photographers who want to sell their photos.'}
-              stack={photographerMarketplace}
-              link={'/projects'}
-            />
-          </motion.div>
-
-          {/* Deuxième Box avec whileInView et un délai supplémentaire */}
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }} viewport={{ once: true, amount: 0.2 }}>
             <Box
               style={'min-h-[350px] lg:min-h-[500px] flex flex-col gap-7 p-[30px] lg:p-[50px] w-full'}
               colors={'bg-slate-300 text-slate-900'}
@@ -74,10 +59,22 @@ export const Projects = () => {
               text={'An app to find developers who use the same technologies as you.'}
               stack={betweenDevs}
               link={'https://github.com/frontcodelover/betweendevs-public'}
+              icon={<FaGithub />}
             />
           </motion.div>
 
-          {/* Troisième Box avec whileInView et un délai encore plus grand */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }} viewport={{ once: true, amount: 0.2 }}>
+            <Box
+              style={'min-h-[350px] lg:min-h-[500px] flex flex-col gap-7 p-[30px] lg:p-[50px] w-full'}
+              colors={'bg-slate-300 text-slate-900'}
+              headings={'Photographer MarketPlace'}
+              text={'A market place for photographers who want to sell their photos.'}
+              stack={photographerMarketplace}
+              link={'https://github.com/frontcodelover/picsell/'}
+              icon={<FaGithub />}
+            />
+          </motion.div>
+
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.9, duration: 0.8, ease: 'easeOut' }} viewport={{ once: true, amount: 0.2 }}>
             <Box
               style={'min-h-[350px] lg:min-h-[500px] flex flex-col gap-7 p-[30px] lg:p-[50px] w-full'}
@@ -86,6 +83,7 @@ export const Projects = () => {
               text={'An app to save your favorite books and share them with others.'}
               stack={favoriteBooks}
               link={'https://github.com/frontcodelover/mybooklist'}
+              icon={<FaGithub />}
             />
           </motion.div>
         </div>
