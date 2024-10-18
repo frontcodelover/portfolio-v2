@@ -1,3 +1,4 @@
+import { Contact } from './components/contact/page';
 import { Headings } from './components/hero/headings';
 import { Projects } from './components/projects/projects';
 import { About } from './components/skills/about';
@@ -9,11 +10,13 @@ export default function Home() {
     <div className='flex justify-between items-center'>
       <div className='flex-1'>
         <Headings />
-        <Title heading={'This is who I am and what I love to do...'} />
+        <Title heading={'This is who I am and what I love to do...'} id={'skills'} />
         <Skills />
         <About />
-				<Title heading={"Some Projects I've Been Involved In... "} />
-				<Projects />
+        <Title heading={"Some Projects I've Been Involved In... "} id={'projects'} />
+        <Projects />
+        <Title heading={"Let's Get In Touch..."} id={'contact'} />
+        <Contact />
       </div>
     </div>
   );

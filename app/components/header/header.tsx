@@ -2,8 +2,6 @@
 import { CgDarkMode } from 'react-icons/cg';
 import Link from 'next/link';
 import Button from './theme/button';
-
-//import le context pour change la couleur du theme
 import { useThemeColor } from '@/app/context/themeColorContext';
 
 export const Header = () => {
@@ -12,7 +10,7 @@ export const Header = () => {
   const links = [
     { name: 'Skills', href: '/#skills' },
     { name: 'Projects', href: '/#projects' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   const handleClick = () => {
