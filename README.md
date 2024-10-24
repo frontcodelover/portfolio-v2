@@ -18,7 +18,7 @@ Bienvenue sur mon portfolio v2 ! Ce projet est mon portfolio personnel en tant q
 - **Formulaire de contact**
 - **Responsive**
 
-# Portfolio v2 🌐
+__________
 
 Welcome to my portfolio v2! This project is my personal portfolio as a **React** and **Next.js** developer, designed to showcase my skills, projects, and experience in web development.
 
