@@ -1,3 +1,5 @@
+'use client'
+import React, { useEffect } from 'react';
 import Contact from './components/contact/page';
 import { Footer } from './components/footer/footer';
 import { Headings } from './components/hero/headings';
@@ -7,8 +9,23 @@ import { Skills } from './components/skills/skills';
 import { Title } from './components/title/title';
 import { Header } from '@/app/components/header/header';
 
+function asciiArt(): void {
+  console.log(`
+                                              _  _ ___                                                
+   |  _    _ |_   _  ._ _ |_   _       ._   /  | \\  |    _        /\\  | _|_  _  ._ ._   _. ._   _  _  
+ \\_| (/_  (_ | | (/_ | (_ | | (/_  |_| | |  \\_ |_/ _|_  (_) |_|  /--\\ |  |_ (/_ |  | | (_| | | (_ (/_ 
+                                                                                                      
+ job @ nicolasderaemy . fr
+`);
+}
+
+
 export default function Home() {
-  return (
+	useEffect(() => {
+		asciiArt();
+	}, []);
+
+	return (
     <div className='justify-between items-center'>
       <div className='flex-1'>
         <Header />

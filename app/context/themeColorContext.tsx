@@ -27,9 +27,9 @@ export const ThemeColorProvider = ({ children }: { children: ReactNode }) => {
   const [themeColor, setThemeColor] = useState<ThemeColor>(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('themeColor') as ThemeColor;
-      return savedTheme || 'light'; 
+      return savedTheme || 'light';
     }
-    return 'light'; 
+    return 'light';
   });
 
   // Apply the theme color to the root element
@@ -46,8 +46,6 @@ export const ThemeColorProvider = ({ children }: { children: ReactNode }) => {
         root.classList.add('light');
         root.classList.remove('dark');
       }
-
-      console.log(`Theme applied: ${themeColor}`);
     }
   }, [themeColor]);
 
