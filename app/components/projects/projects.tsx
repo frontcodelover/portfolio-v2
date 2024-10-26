@@ -54,7 +54,7 @@ export const Projects = () => {
         <div className='grid lg:grid-cols-2 gap-7 w-full mt-20'>
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }} viewport={{ once: true, amount: 0.2 }}>
             <Box
-              style={'min-h-[350px] lg:min-h-[500px] flex gap-7 p-[30px] lg:p-[50px] w-full'}
+              style={'min-h-[350px] lg:min-h-[500px] flex flex-col md:flex-row gap-7 p-[30px] lg:p-[50px] w-full'}
               colors={'bg-slate-300 text-slate-900'}
               headings={'BetweenDevs'}
               text={'An app to find developers who use the same technologies as you.'}
@@ -67,7 +67,7 @@ export const Projects = () => {
 
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }} viewport={{ once: true, amount: 0.2 }}>
             <Box
-              style={'min-h-[350px] lg:min-h-[500px] flex flex-col gap-7 p-[30px] lg:p-[50px] w-full'}
+              style={'min-h-[350px] lg:min-h-[500px] flex flex-col md:flex-row gap-7 p-[30px] lg:p-[50px] w-full'}
               colors={'bg-slate-300 text-slate-900'}
               headings={'Photographer MarketPlace'}
               text={'A market place for photographers who want to sell their photos.'}

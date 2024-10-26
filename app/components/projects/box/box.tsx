@@ -27,7 +27,7 @@ export const Box: React.FC<BoxProps> = ({ ...props }) => {
         <div className='flex flex-col justify-between items-center gap-6 h-full'>
           <div className='flex flex-col gap-6'>
             <h3 className='font-bold md:text-2xl text-xl'>{props.headings}</h3>
-            <div className='md:text-4xl text-3xl text-balance'>{props.text}</div>
+            <div className='md:text-4xl text-2xl text-balance'>{props.text}</div>
           </div>
           <div className='text-right'>
             <Link href={props.link} target='_blank'>
@@ -39,7 +39,7 @@ export const Box: React.FC<BoxProps> = ({ ...props }) => {
           </div>
         </div>
       </div>
-      {props.image && <Image src={props.image} alt={props.headings} width={150} height={0} className='rounded-2xl object-contain' />}
+      <div className='flex justify-center'>{props.image && <Image src={props.image} alt={props.headings} width={200} height={0} className='rounded-2xl object-contain' />}</div>
     </div>
   );
 };
