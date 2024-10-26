@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image, { StaticImageData } from 'next/image';
 
 interface BoxProps {
   style: string;
@@ -9,6 +10,7 @@ interface BoxProps {
   stack: { name: string; colors: string }[];
   link: string;
   icon: React.ReactNode;
+  image?: StaticImageData;
 }
 
 export const Box: React.FC<BoxProps> = ({ ...props }) => {
@@ -27,7 +29,6 @@ export const Box: React.FC<BoxProps> = ({ ...props }) => {
             <h3 className='font-bold md:text-2xl text-xl'>{props.headings}</h3>
             <div className='md:text-4xl text-3xl text-balance'>{props.text}</div>
           </div>
-
           <div className='text-right'>
             <Link href={props.link} target='_blank'>
               <div className='flex gap-3 items-center border-2 rounded-2xl px-5 py-1 bg-white dark:hover:bg-white dark:bg-slate-200 text-slate-900 hover:shadow-lg ease-in-out transition-shadow'>
@@ -38,6 +39,7 @@ export const Box: React.FC<BoxProps> = ({ ...props }) => {
           </div>
         </div>
       </div>
+      {props.image && <Image src={props.image} alt={props.headings} width={150} height={0} className='rounded-2xl object-contain' />}
     </div>
   );
 };
