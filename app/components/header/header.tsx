@@ -8,8 +8,8 @@ export const Header = () => {
   const { themeColor, setThemeColor } = useThemeColor();
 
   const links = [
-    { name: 'Skills', href: '/#skills' },
-    { name: 'Projects', href: '/#projects' },
+    { name: 'Compétences', href: '/#skills' },
+    { name: 'Projets', href: '/#projects' },
     { name: 'Contact', href: '/#contact' },
   ];
 

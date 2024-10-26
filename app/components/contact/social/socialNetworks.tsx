@@ -21,7 +21,7 @@ export const SocialNetworks = () => {
       <Link href='https://x.com/frontcodelover' target='_blank'>
         <div className='flex gap-2 items-center dark:text-slate-950 hover:text-slate-600 dark:hover:text-slate-600  bg-white px-6 py-1 rounded-2xl text-xl text-slate-900 tracking-tighter dark:border-none border'>
           <FaXTwitter />
-          <span>Twitter</span>
+          <span>X</span>
         </div>
       </Link>
     </div>

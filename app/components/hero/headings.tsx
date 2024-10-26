@@ -22,8 +22,8 @@ export const Headings = () => {
           </motion.h2>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className='lg:w-2/3 tracking-tighter'>
             <h1 className='md:text-2xl text-xl font-normal dark:text-slate-300 -mt-10 md:mt-0'>
-              ___French Front-End Developer crafting modern web experiences with <span className='font-bold'>React & Next.js</span> ready to grow within a{' '}
-              <span className='underline'>supportive team.</span>
+              Développeur Front-End passionné par <span className='font-bold'>React & Next.js</span>, prêt à évoluer au sein d&apos;une
+              <span className='underline'> équipe bienveillante.</span>
             </h1>
           </motion.div>
         </div>

@@ -32,7 +32,7 @@ export const Box: React.FC<BoxProps> = ({ ...props }) => {
           <div className='text-right'>
             <Link href={props.link} target='_blank'>
               <div className='flex gap-3 items-center border-2 rounded-2xl px-5 py-1 bg-white dark:hover:bg-white dark:bg-slate-200 text-slate-900 hover:shadow-lg ease-in-out transition-shadow'>
-                <span className='font-bold'>Check on Github</span>
+                <span className='font-bold'>Voir sur Github</span>
                 {props.icon}
               </div>
             </Link>

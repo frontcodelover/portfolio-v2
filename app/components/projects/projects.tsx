@@ -57,7 +57,7 @@ export const Projects = () => {
               style={'min-h-[350px] lg:min-h-[500px] flex flex-col md:flex-row gap-7 p-[30px] lg:p-[50px] w-full'}
               colors={'bg-slate-300 text-slate-900'}
               headings={'BetweenDevs'}
-              text={'An app to find developers who use the same technologies as you.'}
+              text={'Une application de mise en relation pour les développeurs.'}
               stack={betweenDevs}
               link={'https://github.com/frontcodelover/betweendevs-public'}
               icon={<FaGithub />}
@@ -69,8 +69,8 @@ export const Projects = () => {
             <Box
               style={'min-h-[350px] lg:min-h-[500px] flex flex-col md:flex-row gap-7 p-[30px] lg:p-[50px] w-full'}
               colors={'bg-slate-300 text-slate-900'}
-              headings={'Photographer MarketPlace'}
-              text={'A market place for photographers who want to sell their photos.'}
+              headings={'Picsell'}
+              text={'Une marketplace pour les photographes et les amateurs de photographie.'}
               stack={photographerMarketplace}
               link={'https://github.com/frontcodelover/picsell/'}
               icon={<FaGithub />}
@@ -90,7 +90,7 @@ export const Projects = () => {
           </motion.div> */}
         </div>
         <div className='text-2xl md:text-3xl md:w-3/6 w-4/6 py-20 tracking-tighter max-w-full'>
-          Just few projects after <span className='font-black'>{totalCount} commits</span>
+          Seulement quelques projets après <span className='font-black'>{totalCount} commits</span>
         </div>
       </div>
     </>

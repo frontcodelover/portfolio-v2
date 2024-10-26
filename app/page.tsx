@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect } from 'react';
 import Contact from './components/contact/page';
 import { Footer } from './components/footer/footer';
@@ -11,31 +11,32 @@ import { Header } from '@/app/components/header/header';
 
 function asciiArt(): void {
   console.log(`
-                                              _  _ ___                                                
-   |  _    _ |_   _  ._ _ |_   _       ._   /  | \\  |    _        /\\  | _|_  _  ._ ._   _. ._   _  _  
- \\_| (/_  (_ | | (/_ | (_ | | (/_  |_| | |  \\_ |_/ _|_  (_) |_|  /--\\ |  |_ (/_ |  | | (_| | | (_ (/_ 
-                                                                                                      
+ Tu recherches quelque chose ? :) 
+ Surement un développeur web qui aime les défis ?
+ Tu as un poste en CDI ou en Alternance à m'offrir ?
+ Tu es au bon endroit car je suis à la recherche d'une nouvelle opportunité.
+ ______________________________________________________________
+ Contacte-moi pour en savoir plus.
  job @ nicolasderaemy . fr
 `);
 }
 
-
 export default function Home() {
-	useEffect(() => {
-		asciiArt();
-	}, []);
+  useEffect(() => {
+    asciiArt();
+  }, []);
 
-	return (
+  return (
     <div className='justify-between items-center'>
       <div className='flex-1'>
         <Header />
         <Headings />
-        <Title heading={'This is who I am and what I love to do...'} id={'skills'} />
+        <Title heading={"Qui je suis et ce que j'aime faire..."} id={'skills'} />
         <Skills />
         <About />
-        <Title heading={"Some Projects I've Been Involved In... "} id={'projects'} />
+        <Title heading={"Quelques projets auxquels j'ai participé..."} id={'projects'} />
         <Projects />
-        <Title heading={"Let's Get In Touch..."} id={'contact'} />
+        <Title heading={'Me contacter...'} id={'contact'} />
         <Contact />
         <Footer />
       </div>
