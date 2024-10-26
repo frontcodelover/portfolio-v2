@@ -43,7 +43,7 @@ const stacks = {
 
 const photographerMarketplace = [stacks.nextjs, stacks.supabase, stacks.typescript, stacks.tailwind];
 const betweenDevs = [stacks.react, stacks.nodejs, stacks.websocket, stacks.tailwind];
-const favoriteBooks = [stacks.nextjs, stacks.firebase, stacks.tailwind];
+// const favoriteBooks = [stacks.nextjs, stacks.firebase, stacks.tailwind];
 
 export const Projects = () => {
   const { totalCount } = useGitHubCommits();
@@ -89,7 +89,7 @@ export const Projects = () => {
             />
           </motion.div> */}
         </div>
-        <div className='text-2xl md:text-3xl md:ml-[66%] md:w-3/6 w-4/6 py-20 tracking-tighter'>
+        <div className='text-2xl md:text-3xl md:w-3/6 w-4/6 py-20 tracking-tighter max-w-full'>
           Just few projects after <span className='font-black'>{totalCount} commits</span>
         </div>
       </div>
