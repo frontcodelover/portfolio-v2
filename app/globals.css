@@ -9,7 +9,7 @@ html {
 :root {
   --background-color: #ffffff;
   --text-color: #171717;
-  --primary: rgb(241 245 249);
+  --primary: #fbfbfd;
   --secondary: #059669;
   --tertiary: #059669;
   --quaternary: #000000;
@@ -53,4 +53,18 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.horizontal-scrollbar-hidden {
+  overflow-x: auto;
+  overflow-y: visible; /* Conserve la scrollbar verticale */
+}
+
+.horizontal-scrollbar-hidden::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+.horizontal-scrollbar-hidden {
+  scrollbar-width: thin; /* Pour les navigateurs supportant scrollbar-width */
+  scrollbar-color: transparent transparent;
 }

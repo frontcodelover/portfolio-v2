@@ -8,11 +8,12 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        primary: 'var(--primary)',
       },
     },
   },
-	plugins: [],
-	corePlugins: {
+  plugins: [],
+  corePlugins: {
     scrollBehavior: true,
   },
 };

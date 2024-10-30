@@ -27,17 +27,27 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='justify-between items-center'>
+    <div>
       <div className='flex-1'>
         <Header />
-        <Headings />
-        <Title heading={'Qui je suis'} id={'skills'} />
-        <About />
+        <section className='bg-white'>
+          <Headings />
+        </section>
+        <section className='bg-white py-40'>
+          <Title heading={'Qui je suis.'} id={'skills'} />
+          <About />
+        </section>
         {/* <Skills /> */}
-        <Title heading={'Derniers projets'} id={'projects'} />
-        <Projects />
-        <Title heading={'Me contacter'} id={'contact'} />
+        <section className='py-40 bg-zinc-100'>
+          <Title heading={'Derniers projets.'} id={'projects'} />
+          <Projects />
+				</section>
+				
+				<section className='py-40'>
+
+        <Title heading={'Me contacter.'} id={'contact'} />
         <Contact />
+				</section>
         <Footer />
       </div>
     </div>
