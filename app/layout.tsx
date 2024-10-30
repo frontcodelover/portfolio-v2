@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
-import { ThemeColorProvider } from './context/themeColorContext';
-import { SpotlightWrapper } from '@/app/components/header/spotlightWrapper';
 
 const notoSans = localFont({
   src: './fonts/noto.ttf',
@@ -21,12 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <ThemeColorProvider>
-        <body className={`${notoSans.variable} antialiased`}>
-          <SpotlightWrapper>{children}</SpotlightWrapper>
-        </body>
-      </ThemeColorProvider>
+    <html lang='fr'>
+      <body className={`${notoSans.variable} antialiased`}>{children}</body>
     </html>
   );
 }

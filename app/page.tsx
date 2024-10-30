@@ -5,7 +5,7 @@ import { Footer } from './components/footer/footer';
 import { Headings } from './components/hero/headings';
 import { Projects } from './components/projects/projects';
 import { About } from './components/skills/about';
-import { Skills } from './components/skills/skills';
+// import { Skills } from './components/skills/skills';
 import { Title } from './components/title/title';
 import { Header } from '@/app/components/header/header';
 
@@ -27,17 +27,27 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='justify-between items-center'>
+    <div>
       <div className='flex-1'>
         <Header />
-        <Headings />
-        <Title heading={"Qui je suis et ce que j'aime faire..."} id={'skills'} />
-        <Skills />
-        <About />
-        <Title heading={"Quelques projets auxquels j'ai participé..."} id={'projects'} />
-        <Projects />
-        <Title heading={'Me contacter...'} id={'contact'} />
+        <section className='bg-white'>
+          <Headings />
+        </section>
+        <section className='bg-white py-40'>
+          <Title heading={'Qui je suis.'} id={'skills'} />
+          <About />
+        </section>
+        {/* <Skills /> */}
+        <section className='py-40 bg-zinc-100'>
+          <Title heading={'Derniers projets.'} id={'projects'} />
+          <Projects />
+				</section>
+				
+				<section className='py-40'>
+
+        <Title heading={'Me contacter.'} id={'contact'} />
         <Contact />
+				</section>
         <Footer />
       </div>
     </div>

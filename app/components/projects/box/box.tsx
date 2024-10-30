@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
 
 interface BoxProps {
   style: string;
@@ -10,36 +9,44 @@ interface BoxProps {
   stack: { name: string; colors: string }[];
   link: string;
   icon: React.ReactNode;
-  image?: StaticImageData;
+  video?: string;
+  statut: string;
 }
 
 export const Box: React.FC<BoxProps> = ({ ...props }) => {
   return (
-    <div className={`${props.style} ${props.colors} rounded-3xl text-slate-200 h-full border border-slate-300 dark:bg-slate-950 dark:border-slate-800 dark:text-slate-300`}>
-      <div className='flex flex-col gap-6 h-full'>
-        <div className='text-sm flex gap-2 justify-start w-full flex-wrap'>
+    <div className={`${props.style} rounded-3xl text-slate-200 h-full md:w-[500px] `}>
+      <div className={` ${props.colors} rounded-3xl text-slate-200 h-[300px] w-[300px] md:h-[500px] md:w-[500px]`}>
+        <div className='flex justify-center items-center'>{props.video && <video src={props.video} autoPlay loop muted className='w-full h-full rounded-2xl object-contain' />}</div>
+      </div>
+
+      <div className='flex flex-col gap-1 items-center w-11/12 tracking-tight'>
+        <div className='flex w-full text-sm text-slate-400'> Projet {props.statut}</div>
+        <div className='text-lg '>
+          <span className='text-slate-500'>{props.text}</span>
+          <span className='font-bold text-slate-800'> {props.headings}</span>
+        </div>
+        {/* 
+        <div className=' flex gap-2 justify-start w-full flex-wrap text-slate-800'>
+          <span className='font-bold '>Stack :</span>{' '}
           {props.stack.map((item, index) => (
-            <span className={`${item.colors} px-3 rounded-sm tracking-normal`} key={index}>
-              {item.name}{' '}
+            <span className={`  rounded-sm tracking-normal`} key={index}>
+              {item.name}
             </span>
           ))}
-        </div>
-        <div className='flex flex-col justify-between items-center gap-6 h-full'>
-          <div className='flex flex-col gap-6'>
-            <h3 className='font-bold md:text-2xl text-xl'>{props.headings}</h3>
-            <div className='md:text-4xl text-2xl text-balance'>{props.text}</div>
-          </div>
-          <div className='text-right'>
-            <Link href={props.link} target='_blank'>
-              <div className='flex gap-3 items-center border-2 rounded-2xl px-5 py-1 bg-white dark:hover:bg-white dark:bg-slate-200 text-slate-900 hover:shadow-lg ease-in-out transition-shadow'>
-                <span className='font-bold'>Voir sur Github</span>
-                {props.icon}
-              </div>
-            </Link>
-          </div>
+				</div>*/}
+
+        <div className='flex justify-start w-full mt-4'>
+          <Link href={props.link} target='_blank'>
+            <span className='flex gap-3 items-center'>
+              <span className='font-bold text-emerald-600 hover:text-emerald-700 ease-in-out flex gap-1'>
+                <span>{props.headings}</span>
+                <span>sur Github &gt;</span>
+              </span>
+            </span>
+          </Link>
         </div>
       </div>
-      <div className='flex justify-center'>{props.image && <Image src={props.image} alt={props.headings} width={200} height={0} className='rounded-2xl object-contain' />}</div>
     </div>
   );
 };

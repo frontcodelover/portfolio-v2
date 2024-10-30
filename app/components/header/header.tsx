@@ -1,39 +1,34 @@
 'use client';
-import { CgDarkMode } from 'react-icons/cg';
 import Link from 'next/link';
-import Button from './theme/button';
-import { useThemeColor } from '@/app/context/themeColorContext';
 
 export const Header = () => {
-  const { themeColor, setThemeColor } = useThemeColor();
 
   const links = [
-    { name: 'Compétences', href: '/#skills' },
+    { name: 'A propos', href: '/#skills' },
     { name: 'Projets', href: '/#projects' },
     { name: 'Contact', href: '/#contact' },
   ];
 
-  const handleClick = () => {
-    setThemeColor(themeColor === 'light' ? 'dark' : 'light');
-  };
+ 
 
   return (
-    <header className='flex h-full items-center justify-between'>
-      <Link href='/'>
-        <h1 className='flex text-3xl font-black gap-1'>
-          <span className='translate-x-1'>N</span>d<span className='-translate-x-1 inline-block'>R</span>
-        </h1>
-      </Link>
-      <nav>
-        <ul className='flex items-center space-x-4'>
-          {links.map((link, index) => (
-            <li key={index}>
-              <a href={link.href}>{link.name}</a>
-            </li>
-          ))}
-          <Button onClick={handleClick} icon={<CgDarkMode />} className='flex' />
-        </ul>
-      </nav>
+    <header className='flex h-full items-center justify-between relative'>
+      <div className='fixed z-10 top-0 left-0 w-full flex justify-between px-8 py-4 border-b border-gray-300 bg-primary/10 backdrop-blur'>
+        <Link href='/'>
+          <h1 className='flex text-3xl font-black gap-1'>
+            <span className='translate-x-1'></span>
+          </h1>
+        </Link>
+        <nav>
+          <ul className='flex items-center space-x-4 text-sm tracking-tight text-slate-800'>
+            {links.map((link, index) => (
+              <li key={index}>
+                <a href={link.href}>{link.name}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

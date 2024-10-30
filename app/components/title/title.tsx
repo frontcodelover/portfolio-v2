@@ -5,7 +5,7 @@ interface TitleProps {
 
 export const Title = ({ heading, id }: TitleProps) => {
   return (
-    <h2 id={id} className='text-4xl font-black md:w-8/12 mt-20 md:mt-10 tracking-tighter text-balance p-10 md:text-6xl'>
+    <h2 id={id} className='text-4xl font-bold md:pl-40 pl-20 mb-16 tracking-tight text-balance md:text-6xl'>
       {heading}
     </h2>
   );
