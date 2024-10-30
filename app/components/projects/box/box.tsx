@@ -17,7 +17,7 @@ export const Box: React.FC<BoxProps> = ({ ...props }) => {
   return (
     <div className={`${props.style} rounded-3xl text-slate-200 h-full md:w-[500px] `}>
       <div className={` ${props.colors} rounded-3xl text-slate-200 h-[300px] w-[300px] md:h-[500px] md:w-[500px]`}>
-        <div className='flex justify-center items-center'>{props.video && <video src={props.video} autoPlay loop muted className='w-full h-full rounded-2xl object-contain' />}</div>
+        <div className='flex justify-center items-center'>{props.video && <video src={props.video} autoPlay loop muted playsInline className='w-full h-full rounded-2xl object-contain' />}</div>
       </div>
 
       <div className='flex flex-col gap-1 items-center w-11/12 tracking-tight'>
