@@ -16,14 +16,13 @@ export const About = () => {
   };
 
   return (
-    <motion.div initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} variants={aboutVariants} className='flex flex-col text-2xl tracking-tighter lg:mb-40'>
-      <div className='md:ml-[33%] flex gap-8 flex-col'>
-        Après une première carrière enrichissante, j&apos;ai décidé de suivre ma passion pour le développement en entamant une reconversion professionnelle. Ce parcours m&apos;a permis de construire
-        une solide experience en React/Next et de renforcer ma compréhension des technologies web modernes.
+    <motion.div initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} variants={aboutVariants} className='flex flex-col text-xl tracking-tighter lg:mb-40'>
+      <div className='md:w-11/12 mx-auto flex gap-8 flex-col'>
+        Il y a 15 ans, j&apos;écrivais mes premières lignes de code, et depuis, je n&apos;ai jamais cessé de développer. En 2013, j&apos;ai lancé un site d&apos;affiliation, toujours en ligne
+        aujourd&apos;hui, qui m&apos;a permis de poser les bases de mes compétences en développement web et de les affiner au fil des années.
         <div>
-          Mon parcours professionnel m&apos;a également aidé à développer des compétences précieuses : travail en équipe, communication claire, polyvalence et bien sûr, une curiosité insatiable pour
-          les nouvelles technologies. Je suis désormais à la recherche d&apos;une nouvelle opportunité pour évoluer au sein d&apos;une équipe bienveillante et contribuer au développement de projets
-          innovants.
+          Jusqu&apos;à présent, j&apos;ai toujours codé par passion sur mon temps libre, mais en 2022, j&apos;ai décidé de passer à l&apos;étape supérieure et de transformer cette passion en véritable
+          métier. J&apos;ai alors entrepris une formation intensive en développement Front-End à l&apos;école O&apos;Clock, où j&apos;ai acquis une expertise en JavaScript, ReactJS, NextJS et bien plus encore.
         </div>
       </div>
     </motion.div>

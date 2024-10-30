@@ -15,7 +15,7 @@ interface BoxProps {
 
 export const Box: React.FC<BoxProps> = ({ ...props }) => {
   return (
-    <div className={`${props.style} ${props.colors} rounded-3xl text-slate-200 h-full border border-slate-300 dark:bg-slate-950 dark:border-slate-800 dark:text-slate-300`}>
+    <div className={`${props.style} ${props.colors} rounded-3xl text-slate-200 h-full shadow-md border-slate-300 dark:bg-slate-950 dark:border-slate-800 dark:text-slate-300`}>
       <div className='flex flex-col gap-6 h-full'>
         <div className='text-sm flex gap-2 justify-start w-full flex-wrap'>
           {props.stack.map((item, index) => (

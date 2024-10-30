@@ -55,9 +55,9 @@ export const Projects = () => {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.8, ease: 'easeOut' }} viewport={{ once: true, amount: 0.2 }}>
             <Box
               style={'min-h-[350px] lg:min-h-[500px] flex flex-col md:flex-row gap-7 p-[30px] lg:p-[50px] w-full'}
-              colors={'bg-slate-300 text-slate-900'}
+              colors={'bg-white text-slate-900'}
               headings={'BetweenDevs'}
-              text={'Une application de mise en relation pour les développeurs.'}
+              text={'Application de mise en relation pour les développeurs.'}
               stack={betweenDevs}
               link={'https://github.com/frontcodelover/betweendevs-public'}
               icon={<FaGithub />}
@@ -68,9 +68,9 @@ export const Projects = () => {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }} viewport={{ once: true, amount: 0.2 }}>
             <Box
               style={'min-h-[350px] lg:min-h-[500px] flex flex-col md:flex-row gap-7 p-[30px] lg:p-[50px] w-full'}
-              colors={'bg-slate-300 text-slate-900'}
+              colors={'bg-white text-slate-900'}
               headings={'Picsell'}
-              text={'Une marketplace pour les photographes et les amateurs de photographie.'}
+              text={'Marketplace pour les photographes et les amateurs de photographie.'}
               stack={photographerMarketplace}
               link={'https://github.com/frontcodelover/picsell/'}
               icon={<FaGithub />}

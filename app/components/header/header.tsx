@@ -18,22 +18,24 @@ export const Header = () => {
   };
 
   return (
-    <header className='flex h-full items-center justify-between'>
-      <Link href='/'>
-        <h1 className='flex text-3xl font-black gap-1'>
-          <span className='translate-x-1'>N</span>d<span className='-translate-x-1 inline-block'>R</span>
-        </h1>
-      </Link>
-      <nav>
-        <ul className='flex items-center space-x-4'>
-          {links.map((link, index) => (
-            <li key={index}>
-              <a href={link.href}>{link.name}</a>
-            </li>
-          ))}
-          <Button onClick={handleClick} icon={<CgDarkMode />} className='flex' />
-        </ul>
-      </nav>
+    <header className='flex h-full items-center justify-between relative'>
+      <div className='absolute top-0 left-0 w-full flex justify-between'>
+        <Link href='/'>
+          <h1 className='flex text-3xl font-black gap-1'>
+            <span className='translate-x-1'></span>
+          </h1>
+        </Link>
+        <nav>
+          <ul className='flex items-center space-x-4'>
+            {links.map((link, index) => (
+              <li key={index}>
+                <a href={link.href}>{link.name}</a>
+              </li>
+            ))}
+            <Button onClick={handleClick} icon={<CgDarkMode />} className='flex' />
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };
