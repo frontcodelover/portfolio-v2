@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const Header = () => {
 
   const links = [
-    { name: 'Compétences', href: '/#skills' },
+    { name: 'A propos', href: '/#skills' },
     { name: 'Projets', href: '/#projects' },
     { name: 'Contact', href: '/#contact' },
   ];

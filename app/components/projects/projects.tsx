@@ -1,10 +1,9 @@
 'use client';
 import React, { useRef, useState, useEffect } from 'react';
 import { Box } from './box/box';
-import { useGitHubCommits } from '@/app/hooks/useGitHubCommits';
 import { FaGithub } from 'react-icons/fa';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
-import CountUp from 'react-countup';
+
 
 const stacks = {
   nextjs: { name: 'NextJS', colors: 'bg-blue-500 text-slate-50' },
@@ -21,10 +20,11 @@ const photographerMarketplace = [stacks.nextjs, stacks.supabase, stacks.typescri
 const betweenDevs = [stacks.react, stacks.nodejs, stacks.websocket, stacks.tailwind];
 const favoriteBooks = [stacks.nextjs, stacks.firebase, stacks.tailwind];
 
-const BetweenDevsVideo = '/videos/betweendevs.mp4';
+const BETWEENDEVS = '/videos/betweendevs.mp4';
+const MYBOOKLIST = '/videos/mybooklist.mp4';
+const PICSELL = '/videos/picsell.mp4';
 
 export const Projects = () => {
-  const { totalCount } = useGitHubCommits();
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const [isAtStart, setIsAtStart] = useState(true);
@@ -70,42 +70,41 @@ export const Projects = () => {
     <>
       <div id='projects' className='relative overflow-hidden'>
         <div ref={carouselRef} className='flex min-w-full py-2 overflow-x-auto snap-x snap-mandatory horizontal-scrollbar-hidden'>
+          <Box
+            style={'flex flex-col justify-center items-center gap-7 ml-20 md:ml-40'}
+            colors={'bg-white text-slate-900'}
+            headings={'BetweenDevs'}
+            text={'Application de mise en relation pour les développeurs Front-End et Back-End.'}
+            stack={betweenDevs}
+            link={'https://github.com/frontcodelover/betweendevs-public'}
+            icon={<FaGithub />}
+            video={BETWEENDEVS}
+            statut={'terminé'}
+          />
 
-            <Box
-              style={'flex flex-col justify-center items-center gap-7 ml-20 md:ml-40'}
-              colors={'bg-white text-slate-900'}
-              headings={'BetweenDevs'}
-              text={'Application de mise en relation pour les développeurs Front-End et Back-End.'}
-              stack={betweenDevs}
-              link={'https://github.com/frontcodelover/betweendevs-public'}
-              icon={<FaGithub />}
-              video={BetweenDevsVideo}
-              statut={'terminé'}
-            />
+          <Box
+            style={'flex flex-col ml-6 gap-7'}
+            colors={'bg-white text-slate-900'}
+            headings={'Picsell'}
+            text={'Marketplace entre photographes professionnels et amateurs de photographie.'}
+            stack={photographerMarketplace}
+            link={'https://github.com/frontcodelover/picsell/'}
+            icon={<FaGithub />}
+            statut={'en cours'}
+            video={PICSELL}
+          />
 
-
-
-            <Box
-              style={'flex flex-col ml-6 gap-7'}
-              colors={'bg-white text-slate-900'}
-              headings={'Picsell'}
-              text={'Marketplace entre photographes professionnels et amateurs de photographie.'}
-              stack={photographerMarketplace}
-              link={'https://github.com/frontcodelover/picsell/'}
-              icon={<FaGithub />}
-              statut={'en cours'}
-            />
-
-            <Box
-              style={'flex flex-col gap-7 ml-6 mr-40'}
-              colors={'bg-white text-slate-900'}
-              headings={'Favorite books'}
-              text={'Application pour créer des listes de livres favoris et ajouter un critique.'}
-              stack={favoriteBooks}
-              link={'https://github.com/frontcodelover/mybooklist'}
-              icon={<FaGithub />}
-              statut={'terminé'}
-            />
+          <Box
+            style={'flex flex-col gap-7 ml-6 mr-40'}
+            colors={'bg-white text-slate-900'}
+            headings={'Favorite books'}
+            text={'Application pour créer des listes de livres favoris et ajouter un critique.'}
+            stack={favoriteBooks}
+            link={'https://github.com/frontcodelover/mybooklist'}
+            icon={<FaGithub />}
+            statut={'terminé'}
+            video={MYBOOKLIST}
+          />
         </div>
 
         <div className='flex m-8 gap-3 justify-end'>
@@ -119,12 +118,7 @@ export const Projects = () => {
         </div>
       </div>
 
-      <div className='text-2xl md:text-3xl tracking-tighter md:pl-40 pl-20'>
-        Seulement quelques projets après{' '}
-        <span className='font-black'>
-          <CountUp end={totalCount} duration={10} /> commits
-        </span>
-      </div>
+
     </>
   );
 };

@@ -16,7 +16,7 @@ export const About = () => {
   };
 
   return (
-    <motion.div initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} variants={aboutVariants} className='flex flex-col text-xl text-slate-500 tracking-tight'>
+    <motion.div initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} variants={aboutVariants} className='flex flex-col md:text-xl text-slate-500 tracking-tight'>
 			<div className='md:px-40 px-20 mx-auto flex gap-8 flex-col'>
 				<div>
         Il y a 15 ans, j&apos;écrivais mes premières lignes de code, et depuis, je n&apos;ai jamais cessé de développer. En 2013, j&apos;ai lancé un site d&apos;affiliation, toujours en ligne
