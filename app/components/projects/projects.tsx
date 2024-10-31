@@ -1,9 +1,8 @@
 'use client';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useLayoutEffect } from 'react';
 import { Box } from './box/box';
 import { FaGithub } from 'react-icons/fa';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
-
 
 const stacks = {
   nextjs: { name: 'NextJS', colors: 'bg-blue-500 text-slate-50' },
@@ -33,14 +32,16 @@ export const Projects = () => {
   // Fonction pour faire défiler à droite
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      const cardWidth = carouselRef.current.firstChild ? (carouselRef.current.firstChild as HTMLDivElement).clientWidth : 300;
+      carouselRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
     }
   };
 
   // Fonction pour faire défiler à gauche
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      const cardWidth = carouselRef.current.firstChild ? (carouselRef.current.firstChild as HTMLDivElement).clientWidth : 300;
+      carouselRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
     }
   };
 
@@ -49,17 +50,20 @@ export const Projects = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
 
-      setIsAtStart(scrollLeft === 0);
-      setIsAtEnd(scrollLeft + clientWidth >= scrollWidth - 2); // Tolérance de 1 pixel pour éviter l'imprécision
+      setIsAtStart(scrollLeft <= 1); // Utilise une marge pour Safari
+      setIsAtEnd(scrollLeft + clientWidth >= Math.round(scrollWidth - 1)); // Ajustement de précision
     }
   };
 
   // Ajoute l'événement de défilement et met à jour la position initiale
-  useEffect(() => {
+  useLayoutEffect(() => {
     const carousel = carouselRef.current;
     if (carousel) {
       carousel.addEventListener('scroll', handleScroll);
-      handleScroll(); // Initialiser l'état en fonction de la position de défilement
+      setTimeout(handleScroll, 100); // Déclenche la vérification avec un léger délai pour Safari
+      // Centrer la première carte au chargement
+      const cardWidth = carousel.firstChild ? (carousel.firstChild as HTMLDivElement).clientWidth : 300;
+      carousel.scrollBy({ left: -carousel.scrollLeft + cardWidth / 2, behavior: 'smooth' });
     }
     return () => {
       if (carousel) carousel.removeEventListener('scroll', handleScroll);
@@ -69,9 +73,12 @@ export const Projects = () => {
   return (
     <>
       <div id='projects' className='relative overflow-hidden'>
-        <div ref={carouselRef} className='flex min-w-full py-2 overflow-x-auto snap-x snap-mandatory horizontal-scrollbar-hidden'>
+        <div
+          ref={carouselRef}
+          className='flex min-w-full py-2 pl-4 md:pl-0 overflow-x-auto snap-x snap-mandatory horizontal-scrollbar-hidden justify-start'
+        >
           <Box
-            style={'flex flex-col justify-center items-center gap-7 ml-20 md:ml-40'}
+            style={'flex flex-col justify-center items-center gap-7 min-w-[80%] md:min-w-[auto]'}
             colors={'bg-white text-slate-900'}
             headings={'BetweenDevs'}
             text={'Application de mise en relation pour les développeurs Front-End et Back-End.'}
@@ -83,7 +90,7 @@ export const Projects = () => {
           />
 
           <Box
-            style={'flex flex-col ml-6 gap-7'}
+            style={'flex flex-col ml-6 gap-7 min-w-[80%] md:min-w-[auto]'}
             colors={'bg-white text-slate-900'}
             headings={'Picsell'}
             text={'Marketplace entre photographes professionnels et amateurs de photographie.'}
@@ -95,7 +102,7 @@ export const Projects = () => {
           />
 
           <Box
-            style={'flex flex-col gap-7 ml-6 mr-40'}
+            style={'flex flex-col gap-7 ml-6 mr-40 min-w-[80%] md:min-w-[auto]'}
             colors={'bg-white text-slate-900'}
             headings={'Favorite books'}
             text={'Application pour créer des listes de livres favoris et ajouter un critique.'}
@@ -108,17 +115,23 @@ export const Projects = () => {
         </div>
 
         <div className='flex m-8 gap-3 justify-end'>
-          <button onClick={scrollLeft} className={`${isAtStart && 'text-slate-300'} top-1/2 transform -translate-y-1/2 p-2 bg-slate-200 text-slate-600 rounded-full`}>
+          <button
+            onClick={scrollLeft}
+            disabled={isAtStart}
+            className={`${isAtStart ? 'text-slate-300 cursor-not-allowed' : 'text-slate-600'} top-1/2 transform -translate-y-1/2 p-2 bg-slate-200 rounded-full`}
+          >
             <IoIosArrowBack size={20} />
           </button>
 
-          <button onClick={scrollRight} className={`${isAtEnd && 'text-slate-300'} top-1/2 transform -translate-y-1/2 p-2 bg-slate-200 text-slate-600 rounded-full`}>
+          <button
+            onClick={scrollRight}
+            disabled={isAtEnd}
+            className={`${isAtEnd ? 'text-slate-300 cursor-not-allowed' : 'text-slate-600'} top-1/2 transform -translate-y-1/2 p-2 bg-slate-200 rounded-full`}
+          >
             <IoIosArrowForward size={20} />
           </button>
         </div>
       </div>
-
-
     </>
   );
 };
