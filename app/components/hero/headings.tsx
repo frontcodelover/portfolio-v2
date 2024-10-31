@@ -25,7 +25,7 @@ export const Headings = () => {
           </motion.h1>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className='tracking-tighter'>
             <h2 className='md:text-2xl text-xl font-normal w-fit mx-auto text-left max-w-80 md:max-w-96 text-slate-500'>
-              Développeur Front-End passionné par <span className='font-bold text-slate-800'>ReactJS & NextJS & TailwindCSS </span>
+              Développeur Front-End passionné par <span className='font-bold text-slate-800'>ReactJS, NextJS, TailwindCSS </span>
               <div className='text-xl text-center'>
                 <span className='text-emerald-600 font-bold'><CountUp end={totalCount} duration={5} /> commits</span> à ce jour
               </div>

@@ -33,8 +33,8 @@ export default function Home() {
         <section className='bg-white'>
           <Headings />
         </section>
-        <section className='bg-white py-40'>
-          <Title heading={'Qui je suis.'} id={'skills'} />
+        <section className='bg-white py-40' id={'skills'}>
+          {/* <Title heading={'Qui je suis.'} id={'skills'} /> */}
           <About />
         </section>
         {/* <Skills /> */}
