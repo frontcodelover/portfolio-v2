@@ -33,7 +33,6 @@ Welcome to my portfolio v2! This project is my personal portfolio as a **React**
 
 ## 🚀 Features
 
-- **Dark Mode**
 - **Showcase of my projects**
 - **About section**
 - **Contact form**
