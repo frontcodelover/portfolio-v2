@@ -16,7 +16,7 @@ export const Headings = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className='flex flex-col text-center text-5xl lg:text-7xl justify-center lg:text-right font-black tracking-tighter text-slate-900'
+            className='flex flex-col text-center text-5xl lg:text-7xl justify-center lg:text-right font-black tracking-tighter text-slate-900 4k:text-9xl'
           >
             &lt;Hello World,
             <span className='block'>
@@ -24,9 +24,9 @@ export const Headings = () => {
             </span>
           </motion.h1>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className='tracking-tighter'>
-            <h2 className='md:text-2xl text-xl font-normal w-fit mx-auto text-left max-w-80 md:max-w-96 text-slate-500'>
+            <h2 className='md:text-2xl text-xl font-normal w-fit mx-auto text-left max-w-80 md:max-w-96 text-slate-500 4k:text-4xl 4k:max-w-fit'>
               Développeur Front-End passionné par <span className='font-bold text-slate-800'>ReactJS, NextJS, TailwindCSS </span>
-              <div className='text-xl text-center'>
+              <div className='text-xl text-center 4k:text-4xl'>
                 <span className='text-emerald-600 font-bold'><CountUp end={totalCount} duration={5} /> commits</span> à ce jour
               </div>
             </h2>

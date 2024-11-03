@@ -72,7 +72,7 @@ export const Projects = () => {
 
   return (
     <>
-      <div id='projects' className='relative overflow-hidden'>
+      <div id='projects' className='relative overflow-hidden ml-12'>
         <div
           ref={carouselRef}
           className='flex min-w-full py-2 pl-4 md:pl-0 overflow-x-auto snap-x snap-mandatory horizontal-scrollbar-hidden justify-start'

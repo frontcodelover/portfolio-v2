@@ -2,14 +2,11 @@
 import Link from 'next/link';
 
 export const Header = () => {
-
   const links = [
     { name: 'A propos', href: '/#skills' },
     { name: 'Projets', href: '/#projects' },
     { name: 'Contact', href: '/#contact' },
   ];
-
- 
 
   return (
     <header className='flex h-full items-center justify-between relative'>
@@ -20,7 +17,7 @@ export const Header = () => {
           </h1>
         </Link>
         <nav>
-          <ul className='flex items-center space-x-4 text-sm tracking-tight text-slate-800'>
+          <ul className='flex items-center space-x-4 text-sm tracking-tight text-slate-800 4k:text-3xl'>
             {links.map((link, index) => (
               <li key={index}>
                 <a href={link.href}>{link.name}</a>

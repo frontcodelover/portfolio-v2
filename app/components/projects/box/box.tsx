@@ -15,16 +15,17 @@ interface BoxProps {
 
 export const Box: React.FC<BoxProps> = ({ ...props }) => {
   return (
-    <div className={`${props.style} rounded-3xl text-slate-200 h-full md:w-[500px] `}>
+    <div className={`${props.style} rounded-3xl text-slate-200 h-full md:w-[500px]`}>
       <div className={` ${props.colors} rounded-3xl text-slate-200 h-[300px] w-[300px] md:h-[500px] md:w-[500px]`}>
         <div className='flex justify-center items-center'>{props.video && <video src={props.video} autoPlay loop muted playsInline className='w-full h-full rounded-2xl object-contain' />}</div>
       </div>
 
-      <div className='flex flex-col gap-1 items-center w-11/12 tracking-tight'>
+      <div className='flex flex-col gap-1 tracking-tight'>
         <div className='flex w-full text-sm text-slate-400'> Projet {props.statut}</div>
-        <div className='text-lg '>
-          <span className='text-slate-500'>{props.text}</span>
+        <div className='text-lg'>
+					<span className='text-slate-500'>{props.text}
           <span className='font-bold text-slate-800'> {props.headings}</span>
+					</span>
         </div>
         {/* 
         <div className=' flex gap-2 justify-start w-full flex-wrap text-slate-800'>
